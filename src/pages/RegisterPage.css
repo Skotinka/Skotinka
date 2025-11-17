@@ -1,0 +1,30 @@
+.register-page-exact {
+  min-height: 100vh;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+}
+
+.register-container-exact {
+  width: 100%;
+  max-width: 350px;
+  background: white;
+}
+
+.register-section-exact {
+  margin-bottom: 30px;
+}
+
+.register-title-exact {
+  font-size: 18px;
+  font-weight: normal;
+  color: #000000;
+  margin-bottom: 20px;
+  text-align: left;
+  line-height: 1.3;
+}
+
+/* Остальные стили наследуются из LoginPage.css */
