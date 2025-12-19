@@ -5,27 +5,124 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background: white;
-  color: #000000;
-  line-height: 1.4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #2c3e50;
+  line-height: 1.6;
 }
 
 .App {
-  text-align: left;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Загрузка приложения */
+.app-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.app-loading .spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.app-loading p {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Анимация появления страниц */
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-page-exact,
+.register-page-exact,
+.dashboard-page-exact {
+  animation: pageEnter 0.6s ease-out;
+}
+
+/* Стили для скроллбара */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a6fd8, #6a4190);
+}
+
+/* Улучшенный фокус для доступности */
+:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Улучшенная типографика */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Стили для форм на всех страницах */
+input, button, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Убираем стандартные стили для кнопок */
 button {
-  font-family: 'Arial', sans-serif;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
 }
 
-input {
-  font-family: 'Arial', sans-serif;
-}
-
-/* Убираем стандартные стили браузера */
-input, button {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+/* Плавные переходы */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, 
+              color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
 }
